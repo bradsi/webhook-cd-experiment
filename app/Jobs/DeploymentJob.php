@@ -15,10 +15,13 @@ class DeploymentJob extends ProcessWebhookJob
 {
     public function handle()
     {
-        Log::info('dumping IP');
-        Log::debug(request()->getClientIp());
+        Log::info('Hit DeploymentJob');
 
-        Log::info('dumping webhook call');
-        Log::info(json_encode($this->webhookCall));
+        if (config('app.env') === 'staging') {
+            Log::info('Running staging deployment script');
+            exec('php vendor/bin/envoy run deploy-staging');
+        }
+
+        Log::info('Finished DeploymentJob');
     }
 }

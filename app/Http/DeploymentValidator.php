@@ -12,6 +12,9 @@ class DeploymentValidator implements SignatureValidator
 //    private array $ipAddresses = [
 //    ];
 
+// envoy is available here
+// php vendor/bin/envoy
+
     public function isValid(Request $request, WebhookConfig $config): bool
     {
         return true;
