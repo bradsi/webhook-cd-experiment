@@ -16,7 +16,7 @@ class DeploymentJob extends ProcessWebhookJob
     public function handle()
     {
         Log::info('dumping IP');
-        Log::debug(request()->ip());
+        Log::debug(request()->getClientIp());
 
         Log::info('dumping webhook call');
         Log::info(json_encode($this->webhookCall));
