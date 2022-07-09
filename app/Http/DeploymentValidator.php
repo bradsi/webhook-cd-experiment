@@ -16,6 +16,7 @@ class DeploymentValidator implements SignatureValidator
 // php vendor/bin/envoy
 // Test push
 // Test push on staging!
+// Didn't have request history enabled on staging, try again
 
     public function isValid(Request $request, WebhookConfig $config): bool
     {
