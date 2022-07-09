@@ -15,6 +15,7 @@ class DeploymentJob extends ProcessWebhookJob
 {
     public function handle()
     {
+        // test push on staging now
         Log::info('Hit DeploymentJob');
 
         if (config('app.env') === 'staging') {
