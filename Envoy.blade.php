@@ -1,6 +1,6 @@
 @setup
-    $homeDirectory = '~/'
-    $projectDirectory = 'webhooks'
+    $homeDirectory = '~/';
+    $projectDirectory = 'webhooks';
     $branch = 'main';
 
 function logInfo($message) { return "echo '\033[36m" .$message. "\033[0m';\n"; }
