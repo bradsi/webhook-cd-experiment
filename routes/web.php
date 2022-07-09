@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 // Test webhook on staging
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'does this work?';
+//    return view('welcome');
 });
 
 Route::webhooks('webhooks/deploy', 'deploy'); // route name = webhook-client-deploy
