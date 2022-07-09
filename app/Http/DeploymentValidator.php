@@ -9,6 +9,9 @@ use Spatie\WebhookClient\WebhookConfig;
 class DeploymentValidator implements SignatureValidator
 {
 
+//    private array $ipAddresses = [
+//    ];
+
     public function isValid(Request $request, WebhookConfig $config): bool
     {
         return true;
