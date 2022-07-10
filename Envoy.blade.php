@@ -1,7 +1,13 @@
+@include('vendor/autoload.php')
+
 @setup
+    use \Illuminate\Support\Facades\Log;
+
     $homeDirectory = '~/';
     $projectDirectory = 'webhooks';
     $branch = 'main';
+
+    Log::info('inside setup using log facade');
 @endsetup
 
 @task('deploy-staging')
