@@ -25,7 +25,7 @@ class DeploymentJob extends ProcessWebhookJob
 
             Log::info('trying with process command');
 
-            $process = new Process(['php vendor/bin/envoy run deploy-staging']);
+            $process = new Process(['php vendor/bin/envoy run deploy-staging'], '/var/www/staging.jamsoup.com');
             $process->run(function ($type, $buffer) {
                 Log::info('Envoy: ' . $buffer);
             });

@@ -1,22 +1,22 @@
 @servers(['main' => 'localhost'])
 
 @setup
-    $homeDirectory = '~/';
+    $homeDirectory = '/var/www/';
     $projectDirectory = 'staging.jamsoup.com';
     $branch = 'main';
 @endsetup
 
 @task('deploy-staging', ['on' => 'main'])
     echo 'Testing echo from deploy-staging'
-    {{ 'testing blade echo from deploy-staging' }}
+    pwd
     cd {{ $homeDirectory.$projectDirectory }}
+    pwd
     git pull origin {{ $branch }}
     php artisan migrate --force
 @endtask
 
 @task('deploy-local', ['on' => 'main'])
     echo "Testing log output inside deploy-local task"
-    {{ 'Testing log output inside deploy-local task via blade syntax' }}
 @endtask
 
 @task('test', ['on' => 'main'])
