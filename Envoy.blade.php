@@ -1,14 +1,12 @@
 @setup
-    use \Illuminate\Support\Facades\Log;
-
     $homeDirectory = '~/';
     $projectDirectory = 'webhooks';
     $branch = 'main';
-
-    Log::info('Inside Envoy setup method');
 @endsetup
 
 @task('deploy-staging')
+    echo 'Testing echo from deploy-staging'
+    {{ 'testing blade echo from deploy-staging' }}
     cd {{ $homeDirectory.$projectDirectory }}
     git pull origin {{ $branch }}
     php artisan migrate --force
