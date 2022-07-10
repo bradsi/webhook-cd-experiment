@@ -20,7 +20,9 @@ class DeploymentJob extends ProcessWebhookJob
 
         if (config('app.env') === 'staging') {
             Log::info('Running staging deployment script');
-            exec('php vendor/bin/envoy run deploy-staging');
+            $output = [];
+            exec('php vendor/bin/envoy run deploy-staging 2>&1', $output);
+            dump($output);
         }
 
         Log::info('Finished DeploymentJob');
