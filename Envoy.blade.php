@@ -3,11 +3,11 @@
     $projectDirectory = 'webhooks';
     $branch = 'main';
 
-    echo "Inside Envoy setup";
+    logger('Inside Envoy setup method');
 @endsetup
 
 @before
-    echo "Running Envoy deployment script, standard echo output"
+    {{ logger('Running Envoy deployment script') }}
 @endbefore
 
 @task('deploy-staging')
@@ -17,13 +17,13 @@
 @endtask
 
 @error
-    echo "Envoy deployment script ran into an error"
+    {{ logger('Envoy deployment script ran into an error') }}
 @enderror
 
 @success
-    echo "Successfully deployed"
+    {{ logger('Successfully deployed') }}
 @endsuccess
 
 @finished
-    echo "Envoy deployment script finished"
+    {{ logger('Envoy deployment script finished') }}
 @endfinished
