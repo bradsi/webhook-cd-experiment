@@ -2,7 +2,7 @@
 
 @setup
     $homeDirectory = '~/';
-    $projectDirectory = 'webhooks';
+    $projectDirectory = 'staging.jamsoup.com';
     $branch = 'main';
 @endsetup
 
