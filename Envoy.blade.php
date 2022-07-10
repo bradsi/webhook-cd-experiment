@@ -10,7 +10,7 @@ function logLine($message) { return "echo '" .$message. "';\n"; }
 @endsetup
 
 @before
-    {{ logInfo('Running Envoy deployment script') }}
+{{--    {{ logInfo('Running Envoy deployment script') }}--}}
     echo "Running Envoy deployment script, standard echo output"
 @endbefore
 
@@ -21,16 +21,16 @@ function logLine($message) { return "echo '" .$message. "';\n"; }
 @endtask
 
 @error
-    {{ logWarn('Envoy deployment script ran into an error') }}
+{{--    {{ logWarn('Envoy deployment script ran into an error') }}--}}
     echo "Envoy deployment script ran into an error"
 @enderror
 
 @success
-    {{ logSuccess('Successfully deployed') }}
+{{--    {{ logSuccess('Successfully deployed') }}--}}
     echo "Successfully deployed"
 @endsuccess
 
 @finished
-    {{ logLine('Envoy deployment script finished') }}
+{{--    {{ logLine('Envoy deployment script finished') }}--}}
     echo "Envoy deployment script finished"
 @endfinished
