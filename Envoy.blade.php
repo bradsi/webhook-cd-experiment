@@ -1,9 +1,11 @@
 @setup
+    use \Illuminate\Support\Facades\Log;
+
     $homeDirectory = '~/';
     $projectDirectory = 'webhooks';
     $branch = 'main';
 
-    logger('Inside Envoy setup method');
+    Log::info('Inside Envoy setup method');
 @endsetup
 
 @task('deploy-staging')
