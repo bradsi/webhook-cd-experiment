@@ -6,24 +6,24 @@
     logger('Inside Envoy setup method');
 @endsetup
 
-@before
-    {{ logger('Running Envoy deployment script') }}
-@endbefore
-
 @task('deploy-staging')
     cd {{ $homeDirectory.$projectDirectory }}
     git pull origin {{ $branch }}
     php artisan migrate --force
 @endtask
 
-@error
-    {{ logger('Envoy deployment script ran into an error') }}
-@enderror
+{{--@before--}}
+{{--    {{ logger('Running Envoy deployment script') }}--}}
+{{--@endbefore--}}
 
-@success
-    {{ logger('Successfully deployed') }}
-@endsuccess
+{{--@error--}}
+{{--    {{ logger('Envoy deployment script ran into an error') }}--}}
+{{--@enderror--}}
 
-@finished
-    {{ logger('Envoy deployment script finished') }}
-@endfinished
+{{--@success--}}
+{{--    {{ logger('Successfully deployed') }}--}}
+{{--@endsuccess--}}
+
+{{--@finished--}}
+{{--    {{ logger('Envoy deployment script finished') }}--}}
+{{--@endfinished--}}
