@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Test webhook on staging
 
 Route::get('/', function () {
-    return 'does this work?';
+    return 'Hello World!';
 //    return view('welcome');
 });
 
