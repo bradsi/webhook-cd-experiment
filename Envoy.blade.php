@@ -19,11 +19,6 @@
     echo "Testing log output inside deploy-local task"
 @endtask
 
-@task('test', ['on' => 'main'])
-    cd /home/vagrant/webhook-cd-test
-    ls -l
-@endtask
-
 {{--@before--}}
 {{--    {{ logger('Running Envoy deployment script') }}--}}
 {{--@endbefore--}}
